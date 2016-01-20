@@ -24,3 +24,6 @@ $(BIN)/main-afl.out: $(SRC)/main.c
 
 afl-test: afl
 	$(AFL_FUZZ) -i $(TEST_CASE_DIR) -o $(FINDINGS_DIR) $(BIN)/main-afl.out
+
+install:
+	mkdir dist && mkdir dist/bin && findings && echo "OK" || echo "NOK"
